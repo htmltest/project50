@@ -66,6 +66,9 @@ var sliderTimer     = null;
 
                 var curSlider = $('#slider');
                 if (curSlider.data('disableAnimation')) {
+                    curSlider.find('.slider-content li.played').removeClass('played');
+                    curSlider.find('iframe').remove();
+
                     var curIndex = curSlider.data('curIndex');
                     var newIndex = $('.slider-ctrl a').index($(this));
 
@@ -84,6 +87,18 @@ var sliderTimer     = null;
                     });
                 }
             }
+
+            e.preventDefault();
+        });
+
+        $('.slider-play').click(function(e) {
+            window.clearTimeout(sliderTimer);
+            sliderTimer = null;
+
+            var curLink = $(this);
+            var curItem = $(this).parent().parent();
+            curItem.addClass('played');
+            curItem.append('<iframe src="' + curLink.attr('href') + '?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1" frameborder="0" allowfullscreen></iframe>');
 
             e.preventDefault();
         });

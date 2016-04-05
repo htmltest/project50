@@ -33,14 +33,18 @@ nav li.active a {color:#ee1d4e; text-decoration:none}
 #slider {position:relative; height:600px}
 .slider-content {position:absolute; left:0; top:0; width:100%; height:100%}
 .slider-content ul {position:absolute; left:0; top:0; width:100%; height:100%; margin:0; padding:0; list-style:none}
-.slider-content li {position:absolute; left:0; top:0; width:100%; height:100%; margin:0; padding:0; background-color:#000; background-position:center; background-repeat:no-repeat; background-size:cover}
+.slider-content li {position:absolute; left:0; top:0; width:100%; height:100%; margin:0; padding:0; background-color:#000; background-position:center; background-repeat:no-repeat; background-size:cover; overflow:hidden}
 .slider-content li:first-child {z-index:2}
 .slider-inner {padding:228px 0 0 0; width:500px; height:372px; margin:0 auto; text-align:center; color:#fff; position:relative}
-.slider-inner a {display:block; width:86px; height:86px; border:5px solid #ee1d4e; border-radius:48px; margin:0 auto; position:relative}
-.slider-inner a:hover {background:#ee1d4e}
-.slider-inner a:after {content:""; position:absolute; left:29px; top:23px; display:block; width:0; height:0; border-left:35px solid #fff; border-top:20px solid transparent; border-bottom:20px solid transparent}
+.slider-play {display:block; width:86px; height:86px; border:5px solid #ee1d4e; border-radius:48px; margin:0 auto; position:relative}
+.slider-content li.played .slider-play {display:none}
+.slider-play:hover {background:#ee1d4e}
+.slider-play:after {content:""; position:absolute; left:29px; top:23px; display:block; width:0; height:0; border-left:35px solid #fff; border-top:20px solid transparent; border-bottom:20px solid transparent}
 .slider-title {font-size:30px; line-height:30px; position:absolute; left:0; bottom:137px; width:100%}
+.slider-content li.played .slider-title {display:none}
 .slider-type {position:absolute; left:0; bottom:106px; width:100%}
+.slider-content li.played .slider-type {display:none}
+.slider-content li iframe {position:absolute; z-index:2; left:0; top:0; width:100%; height:100%}
 .slider-ctrl {position:absolute; z-index:3; left:0; bottom:43px; width:100%; text-align:center; font-size:0; line-height:0; letter-spacing:-1px}
 .slider-ctrl a {display:inline-block; vertical-align:middle; width:11px; height:11px; border:2px solid #ee1d4e; border-radius:8px; margin:0 0 0 5px}
 .slider-ctrl a:first-child {margin:0}
@@ -116,16 +120,22 @@ nav li.active a {color:#ee1d4e; text-decoration:none}
 .portfolio-item img {display:block; width:100%}
 .portfolio-video {width:100%; height:360px; position:relative}
 .portfolio-video-preview {position:absolute; left:0; top:0; width:100%; height:100%; background:#000}
-.portfolio-video-preview img {opacity:.1}
-.portfolio-video-title {position:relative; font-size:40px; line-height:40px; text-align:center; color:#fff; font-weight:600; padding:53px 80px 0 80px}
-.portfolio-video-type {position:relative; line-height:20px; text-align:center; color:#fff; padding:20px 0 0 0}
-.portfolio-video-icon {position:relative; width:190px; margin:36px auto 0 auto; border-top:1px solid #ee1d4e; padding:25px 0 0 0}
+.portfolio-item a:hover .portfolio-video-preview img {opacity:.1}
+.portfolio-video-title {display:none; position:relative; font-size:40px; line-height:40px; text-align:center; color:#fff; font-weight:600; padding:53px 80px 0 80px}
+.portfolio-item a:hover .portfolio-video-title {display:block}
+.portfolio-video-type {display:none; position:relative; line-height:20px; text-align:center; color:#fff; padding:20px 0 0 0}
+.portfolio-item a:hover .portfolio-video-type {display:block}
+.portfolio-video-icon {display:none; position:relative; width:190px; margin:36px auto 0 auto; border-top:1px solid #ee1d4e; padding:25px 0 0 0}
+.portfolio-item a:hover .portfolio-video-icon {display:block}
 .portfolio-video-icon:after {content:""; display:block; width:0; height:0; margin:0 auto; border-left:24px solid #ee1d4e; border-top:14px solid transparent; border-bottom:14px solid transparent}
 .portfolio-item a:hover .portfolio-video-icon:after {border-left-color:#d10737}
 .portfolio-more {padding:60px 0 0 0}
 .portfolio-more a {display:block; margin:0 auto; width:294px; height:53px; line-height:53px; border:3px solid #ee1d4e; border-radius:30px; text-align:center; text-transform:uppercase}
 .portfolio-more a:hover {text-decoration:none; background:#ee1d4e; color:#fff}
-
+.portfolio-item.portfolio-item-half .portfolio-video-title {font-size:25px; line-height:25px; padding:30px 50px 0 50px}
+.portfolio-item.portfolio-item-third .portfolio-video-title {font-size:16px; line-height:16px; padding:20px 20px 0 20px}
+.portfolio-item.portfolio-item-third .portfolio-video-type {padding:10px 0 0 0; font-size:12px}
+.portfolio-item.portfolio-item-third .portfolio-video-icon {margin:16px auto 0 auto; padding:15px 0 0 0}
 .portfolio-loading {display:none; width:960px}
 .portfolio-loading:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
 .portfolio-loading-progress {height:258px; border:1px solid #dfdfdf; background:url(../images/portfolio-loading-progress.gif) no-repeat center}
@@ -134,14 +144,12 @@ nav li.active a {color:#ee1d4e; text-decoration:none}
 .team-inner {width:940px; margin:0 auto; padding:54px 0 62px 0}
 .team-inner h2 {text-transform:uppercase; text-align:center; font-size:30px; font-weight:normal; line-height:30px; margin:0; padding:0}
 .team-title {text-transform:uppercase; text-align:center; padding:6px 0 0 0}
-.team-list {padding:60px 0 0 0}
-.team-list:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
-.team-item {float:left; width:220px; margin:0 0 0 20px}
-.team-item:first-child {margin:0}
+.team-list {padding:60px 0 0 0; margin:0 0 0 -20px; font-size:0; line-height:0; letter-spacing:-1px}
+.team-item {display:inline-block; vertical-align:top; width:220px; margin:0 0 20px 20px}
 .team-item-photo {line-height:0}
-.team-item-name {font-size:25px; line-height:25px; padding:25px 0 0 0}
-.team-item-post {padding:11px 0 0 0}
-.team-item-text {padding:20px 0 0 0}
+.team-item-name {font-size:25px; line-height:25px; letter-spacing:0; padding:25px 0 0 0}
+.team-item-post {padding:11px 0 0 0; font-size:15px; line-height:20px; letter-spacing:0}
+.team-item-text {padding:20px 0 0 0; font-size:15px; line-height:20px; letter-spacing:0}
 
 #services {background:#2b2224}
 .services-inner {width:940px; margin:0 auto; padding:54px 0 70px 0}
