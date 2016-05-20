@@ -103,8 +103,22 @@ var sliderTimer     = null;
             e.preventDefault();
         });
 
-        $('.events-item-info-address-more').click(function(e) {
+        $('body').on('click', '.events-item-info-address-more', function(e) {
             $(this).parent().toggleClass('open');
+            e.preventDefault();
+        });
+
+        $('body').on('click', '.events-item-detail-link a', function(e) {
+            var curLink = $(this);
+            var curText = curLink.html();
+            curLink.html(curLink.data('alttext'));
+            curLink.data('alttext', curText);
+            curLink.parents().filter('.window-events-item-wrap').toggleClass('open');
+            e.preventDefault();
+        });
+
+        $('body').on('click', '.events-item-detail-close a', function(e) {
+            $(this).parents().filter('.window-events-item-wrap').find('.events-item-detail-link a').click();
             e.preventDefault();
         });
 
@@ -186,6 +200,12 @@ var sliderTimer     = null;
                 }
                 windowOpen(html);
 
+                $('.window-content').append(
+                    '<a href="#" class="project-prev"><div>Предыдущий проект</div><span></span></a>' +
+                    '<a href="#" class="project-next"><div>Следующий проект</div><span></span></a>'
+                );
+
+
                 var curIndex = $('.portfolio-list .portfolio-item').index(curItem);
                 var prevIndex = curIndex - 1;
                 if (prevIndex < 0) {
@@ -228,6 +248,80 @@ var sliderTimer     = null;
             e.preventDefault();
         });
 
+        $('input.maskPhone').mask('+7 999 999-99-99');
+
+        $.extend($.validator.messages, {
+            required: 'Не заполнено поле',
+            email: 'Введен некорректный e-mail'
+        });
+
+        $('.form-select select').chosen({disable_search: true, no_results_text: 'Нет результатов'});
+
+        $('.form-checkbox span input:checked').parent().parent().addClass('checked');
+        $('.form-checkbox').click(function() {
+            $(this).toggleClass('checked');
+            $(this).find('input').prop('checked', $(this).hasClass('checked')).trigger('change');
+        });
+
+        $('.form-radio span input:checked').parent().parent().addClass('checked');
+        $('.form-radio').click(function() {
+            var curName = $(this).find('input').attr('name');
+            $('.form-radio input[name="' + curName + '"]').parent().parent().removeClass('checked');
+            $(this).addClass('checked');
+            $(this).find('input').prop('checked', true).trigger('change');
+        });
+
+        $('form').each(function() {
+            if ($(this).hasClass('ajaxForm') && !$(this).hasClass('isLoading')) {
+                $(this).validate({
+                    ignore: '',
+                    invalidHandler: function(form, validatorcalc) {
+                        validatorcalc.showErrors();
+                    },
+                    submitHandler: function(form) {
+                        $(form).addClass('isLoading');
+                        $(form).find('.form-submit').append('<div class="loading"><div class="loading-text">Отправка данных</div></div>');
+                        $.ajax({
+                            type: 'POST',
+                            url: $(form).attr('action'),
+                            data: $(form).serialize(),
+                            dataType: 'html',
+                            cache: false
+                        }).done(function(html) {
+                            $(form).find('.loading').remove();
+                            $(form).removeClass('isLoading');
+                            $(form).append(html);
+                        });
+                    }
+                });
+            } else {
+                $(this).validate({
+                    ignore: '',
+                    invalidHandler: function(form, validatorcalc) {
+                        validatorcalc.showErrors();
+                    }
+                });
+            }
+        });
+
+        $('.form-file input').change(function() {
+            $(this).parent().find('span').html($(this).val().replace(/.*(\/|\\)/, ''));
+        });
+
+        $('.events-archive, .services-item-link a, .subscribe-link a, .header-ok a').click(function(e) {
+            $.ajax({
+                url: $(this).attr('href'),
+                dataType: 'html',
+                cache: false
+            }).done(function(html) {
+                if ($('.window').length > 0) {
+                    windowClose();
+                }
+                windowOpen(html);
+            });
+            e.preventDefault();
+        });
+
     });
 
     $(window).bind('load resize scroll', function() {
@@ -240,6 +334,12 @@ var sliderTimer     = null;
                 $(this).parent().addClass('active');
             }
         });
+
+        if (curScroll > 0) {
+            $('.wrapper').addClass('fixed');
+        } else {
+            $('.wrapper').removeClass('fixed');
+        }
     });
 
     function windowOpen(contentWindow) {
@@ -258,8 +358,6 @@ var sliderTimer     = null;
                                     '<div class="window-content">' +
                                         contentWindow +
                                         '<a href="#" class="window-close">Закрыть</a>' +
-                                        '<a href="#" class="project-prev"><div>Предыдущий проект</div><span></span></a>' +
-                                        '<a href="#" class="project-next"><div>Следующий проект</div><span></span></a>' +
                                     '</div>' +
                                 '</div>' +
                             '</div>')
@@ -276,6 +374,62 @@ var sliderTimer     = null;
         });
 
         $('body').bind('keyup', keyUpBody);
+
+        $('.window input.maskPhone').mask('+7 999 999-99-99');
+
+        $('.window .form-select select').chosen({disable_search: true, no_results_text: 'Нет результатов'});
+
+        $('.window .form-checkbox span input:checked').parent().parent().addClass('checked');
+        $('.window .form-checkbox').click(function() {
+            $(this).toggleClass('checked');
+            $(this).find('input').prop('checked', $(this).hasClass('checked')).trigger('change');
+        });
+
+        $('.window .form-radio span input:checked').parent().parent().addClass('checked');
+        $('.window .form-radio').click(function() {
+            var curName = $(this).find('input').attr('name');
+            $('.window .form-radio input[name="' + curName + '"]').parent().parent().removeClass('checked');
+            $(this).addClass('checked');
+            $(this).find('input').prop('checked', true).trigger('change');
+        });
+
+        $('.window form').each(function() {
+            if ($(this).hasClass('ajaxForm') && !$(this).hasClass('isLoading')) {
+                $(this).validate({
+                    ignore: '',
+                    invalidHandler: function(form, validatorcalc) {
+                        validatorcalc.showErrors();
+                    },
+                    submitHandler: function(form) {
+                        $(form).addClass('isLoading');
+                        $(form).find('.form-submit').append('<div class="loading"><div class="loading-text">Отправка данных</div></div>');
+                        $.ajax({
+                            type: 'POST',
+                            url: $(form).attr('action'),
+                            data: $(form).serialize(),
+                            dataType: 'html',
+                            cache: false
+                        }).done(function(html) {
+                            $(form).find('.loading').remove();
+                            $(form).removeClass('isLoading');
+                            $(form).append(html);
+                        });
+                    }
+                });
+            } else {
+                $(this).validate({
+                    ignore: '',
+                    invalidHandler: function(form, validatorcalc) {
+                        validatorcalc.showErrors();
+                    }
+                });
+            }
+        });
+
+        $('.window .form-file input').change(function() {
+            $(this).parent().find('span').html($(this).val().replace(/.*(\/|\\)/, ''));
+        });
+
     }
 
     function keyUpBody(e) {
@@ -288,7 +442,7 @@ var sliderTimer     = null;
         $('body').unbind('keyup', keyUpBody);
         $('.window').remove();
         $('.wrapper').css({'margin-top': '0'});
-        $('body').css({'height': 'auto', 'overflow': 'visible'});
+        $('body').css({'height': '100%', 'overflow': 'visible'});
         $(window).scrollTop($('.wrapper').data('scrollTop'));
     }
 

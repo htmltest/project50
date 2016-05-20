@@ -7,372 +7,381 @@
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin,cyrillic" />
         <link rel="stylesheet" href="css/styles.css" />
         <link rel="stylesheet" href="css/jquery.jscrollpane.css" />
+        <link rel="stylesheet" href="js/chosen/chosen.css" />
 
         <script src="js/jquery-2.1.4.min.js"></script>
         <script src="js/jquery.scrollTo-2.1.2.min.js"></script>
         <script src="js/isotope.pkgd.min.js"></script>
         <script src="js/jquery.mousewheel.js"></script>
         <script src="js/jquery.jscrollpane.min.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/chosen/chosen.jquery.min.js"></script>
+        <script src="js/jquery.maskedinput.min.js"></script>
         <script src="js/tools.js"></script>
 
         <meta name="viewport" content="width=1000" />
+
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     </head>
 
     <body>
 
         <!-- wrapper -->
         <div class="wrapper">
+            <div class="wrapper-inner">
 
-            <header>
-                <div class="header-inner">
-                    <div class="logo"><a href="#"><img src="images/logo.png" alt="" width="140" height="203" /></a></div>
+                <header>
+                    <div class="header-inner">
+                        <div class="logo"><a href="#"><img src="images/logo.png" alt="" /></a></div>
 
-                    <div class="header-ok"><a href="#"></a></div>
+                        <div class="header-ok"><a href="windows/callback.html"></a></div>
 
-                    <div class="header-phone">
-                        <div class="header-phone-name">Звоните нам, или мы позвоним вам сами!</div>
-                        <div class="header-phone-value">+7 916 405-94-38</div>
+                        <div class="header-phone">
+                            <div class="header-phone-name">Звоните нам, или мы позвоним вам сами!</div>
+                            <div class="header-phone-value">+7 916 405-94-38</div>
+                        </div>
+
+                        <nav>
+                            <ul>
+                                <li><a href="#events">Мероприятия</a></li>
+                                <li><a href="#portfolio">Наши работы</a></li>
+                                <li><a href="#team">Команда</a></li>
+                                <li><a href="#services">Услуги и цены</a></li>
+                                <li><a href="#clients">Клиенты</a></li>
+                                <li><a href="#contacts">Контакты</a></li>
+                            </ul>
+                        </nav>
                     </div>
+                </header>
 
-                    <nav>
+                <!-- slider -->
+                <section id="slider">
+                    <div class="slider-content">
                         <ul>
-                            <li><a href="#events">Мероприятия</a></li>
-                            <li><a href="#portfolio">Наши работы</a></li>
-                            <li><a href="#team">Команда</a></li>
-                            <li><a href="#services">Услуги и цены</a></li>
-                            <li><a href="#clients">Клиенты</a></li>
-                            <li><a href="#contacts">Контакты</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </header>
-
-            <!-- slider -->
-            <section id="slider">
-                <div class="slider-content">
-                    <ul>
-                        <li style="background-image:url(files/slider-1.jpg)">
-                            <div class="slider-inner">
-                                <a href="https://www.youtube.com/embed/zqeMfcMJ6PU" class="slider-play"></a>
-                                <div class="slider-title">Промо-ролик для компании "МФитнес"</div>
-                                <div class="slider-type">вирусные ролики</div>
-                            </div>
-                        </li>
-
-                        <li style="background-image:url(files/slider-2.jpg)">
-                            <div class="slider-inner">
-                                <a href="https://www.youtube.com/embed/wdhKjkt6bX4" class="slider-play"></a>
-                                <div class="slider-title">Рекламный ролик для фестиваля "Серебряный Меркурий"</div>
-                                <div class="slider-type">промо-ролики</div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="slider-ctrl"></div>
-            </section>
-            <!-- slider END -->
-
-            <!-- subscribe -->
-            <section class="subscribe">
-                <div class="subscribe-icon"></div>
-                <div class="subscribe-text">
-                    <div class="subscribe-title">Наша рассылка</div>
-                    <div class="subscribe-name">Аналитика вирусного маркетинга и эффективные приемы</div>
-                </div>
-                <div class="subscribe-link"><a href="#">Подписаться</a></div>
-            </section>
-            <!-- subscribe END -->
-
-            <!-- events -->
-            <section id="events">
-                <h2>KEEP IT TIME</h2>
-                <div class="events-title">Мероприятия</div>
-                <a href="#" class="events-archive">Архив</a>
-                <div class="events-slider">
-                    <div class="events-item">
-                        <div class="events-item-photo" style="background-image:url(files/events-1.jpg)"></div>
-                        <div class="events-item-content">
-                            <div class="events-item-title">Двухдневный практикум<br />«Вся соль вирусного маркетинга»</div>
-                            <div class="events-item-info">
-                                <div class="events-item-info-inner">
-                                    <div class="events-item-info-date">24-25 октября 11:00</div>
-                                    <div class="events-item-info-address">
-                                        <div class="events-item-info-address-text">
-                                            <div class="events-item-info-address-text-inner">Винзавод, академия коммуникаций Wordshop, 4-й Сыромятнический пер., 1, стр. 6</div>
-                                            <a href="#" class="events-item-info-address-more"><span></span></a>
-                                        </div>
-                                    </div>
+                            <li style="background-image:url(files/slider-1.jpg)">
+                                <div class="slider-inner">
+                                    <a href="https://www.youtube.com/embed/zqeMfcMJ6PU" class="slider-play"></a>
+                                    <div class="slider-title">Промо-ролик для компании "МФитнес"</div>
+                                    <div class="slider-type">вирусные ролики</div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
+                            </li>
 
-                    <div class="events-item">
-                        <div class="events-item-photo" style="background-image:url(files/slider-2.jpg)"></div>
-                        <div class="events-item-content">
-                            <div class="events-item-title">Двухдневный интенсив<br />«Маркетинг не как у всех»</div>
-                            <div class="events-item-info">
-                                <div class="events-item-info-inner">
-                                    <div class="events-item-info-date">26-27 сентября</div>
-                                    <div class="events-item-info-address">
-                                        <div class="events-item-info-address-text">
-                                            <div class="events-item-info-address-text-inner">Винзавод, академия коммуникаций Wordshop, 4-й Сыромятнический пер., 1, стр. 6</div>
-                                            <a href="#" class="events-item-info-address-more"><span></span></a>
-                                        </div>
-                                    </div>
+                            <li style="background-image:url(files/slider-2.jpg)">
+                                <div class="slider-inner">
+                                    <a href="https://www.youtube.com/embed/wdhKjkt6bX4" class="slider-play"></a>
+                                    <div class="slider-title">Рекламный ролик для фестиваля "Серебряный Меркурий"</div>
+                                    <div class="slider-type">промо-ролики</div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="events-item">
-                        <div class="events-item-photo" style="background-image:url(files/slider-3.jpg)"></div>
-                        <div class="events-item-content">
-                            <div class="events-item-title">Тренинг «Как создать вкусный видео-ролик для стартапа»</div>
-                            <div class="events-item-info">
-                                <div class="events-item-info-inner">
-                                    <div class="events-item-info-date">25 июня</div>
-                                    <div class="events-item-info-address">
-                                        <div class="events-item-info-address-text">
-                                            <div class="events-item-info-address-text-inner">Винзавод, академия коммуникаций Wordshop, 4-й Сыромятнический пер., 1, стр. 6</div>
-                                            <a href="#" class="events-item-info-address-more"><span></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="events-ctrl">
-                    <a href="#" class="active">
-                        <div class="events-ctrl-date">24-25 октября 11:00</div>
-                        <div class="events-ctrl-name">Двухдневный практикум «Вся соль вирусного маркетинга»</div>
-                    </a>
-
-                    <a href="#">
-                        <div class="events-ctrl-date">26-27 сентября</div>
-                        <div class="events-ctrl-name">Двухдневный интенсив «Маркетинг не как у всех»</div>
-                    </a>
-
-                    <a href="#">
-                        <div class="events-ctrl-date">25 июня</div>
-                        <div class="events-ctrl-name">Тренинг «Как создать вкусный видео-ролик для стартапа»</div>
-                    </a>
-                </div>
-            </section>
-            <!-- events END -->
-
-            <!-- portfolio -->
-            <section id="portfolio">
-                <h2>KEEP IT WORK</h2>
-                <div class="portfolio-title">Наши работы</div>
-
-                <div class="portfolio-menu">
-                    <ul>
-                        <li class="active"><a href="#" data-filter="*">все проекты</a></li>
-                        <li><a href="#" data-filter=".virus">вирусные ролики</a></li>
-                        <li><a href="#" data-filter=".promo">промо-ролики</a></li>
-                        <li><a href="#" data-filter=".media">медиа-проекты</a></li>
-                    </ul>
-                </div>
-
-                <div class="portfolio-list">
-                    <div class="portfolio-item portfolio-item-two-third virus">
-                        <a href="windows/project.html" title="На каких тренажёрах занимаются Путин и Медведев?">
-                            <div class="portfolio-video">
-                                <div class="portfolio-video-preview"><img src="files/portfolio-1.jpg" alt="" /></div>
-                                <div class="portfolio-video-title">На каких тренажёрах занимаются Путин и Медведев?</div>
-                                <div class="portfolio-video-type">вирусные ролики</div>
-                                <div class="portfolio-video-icon"></div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="portfolio-item portfolio-item-third promo">
-                        <a href="windows/project.html" title="Не проходи мимо">
-                            <div class="portfolio-video">
-                                <div class="portfolio-video-preview"><img src="files/portfolio-2.jpg" alt="" /></div>
-                                <div class="portfolio-video-title">На каких тренажёрах занимаются Путин и Медведев?</div>
-                                <div class="portfolio-video-type">вирусные ролики</div>
-                                <div class="portfolio-video-icon"></div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="portfolio-item portfolio-item-third media">
-                        <a href="windows/project.html" title="МТС">
-                            <div class="portfolio-video">
-                                <div class="portfolio-video-preview"><img src="files/portfolio-3.jpg" alt="" /></div>
-                                <div class="portfolio-video-title">На каких тренажёрах занимаются Путин и Медведев?</div>
-                                <div class="portfolio-video-type">вирусные ролики</div>
-                                <div class="portfolio-video-icon"></div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="portfolio-item portfolio-item-half promo">
-                        <a href="windows/project.html" title="Вирусный ролик про курицу">
-                            <div class="portfolio-video">
-                                <div class="portfolio-video-preview"><img src="files/portfolio-4.jpg" alt="" /></div>
-                                <div class="portfolio-video-title">На каких тренажёрах занимаются Путин и Медведев?</div>
-                                <div class="portfolio-video-type">вирусные ролики</div>
-                                <div class="portfolio-video-icon"></div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="portfolio-item portfolio-item-half media">
-                        <a href="windows/project.html" title="Серебряный меркурий">
-                            <div class="portfolio-video">
-                                <div class="portfolio-video-preview"><img src="files/portfolio-5.jpg" alt="" /></div>
-                                <div class="portfolio-video-title">На каких тренажёрах занимаются Путин и Медведев?</div>
-                                <div class="portfolio-video-type">вирусные ролики</div>
-                                <div class="portfolio-video-icon"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="portfolio-loading">
-                    <div class="portfolio-item portfolio-item-half"><div class="portfolio-loading-progress"></div></div>
-                    <div class="portfolio-item portfolio-item-half"><div class="portfolio-loading-progress"></div></div>
-                </div>
-
-                <div class="portfolio-more"><a href="windows/portfolio-add.html">ДАльше больше</a></div>
-            </section>
-            <!-- portfolio END -->
-
-            <!-- team -->
-            <section id="team">
-                <div class="team-inner">
-                    <h2>KEEP IT TEAM</h2>
-                    <div class="team-title">Наша команда</div>
-
-                    <div class="team-list">
-                        <div class="team-item">
-                            <div class="team-item-photo"><img src="files/team-1.jpg" alt="" width="220" height="220" /></div>
-                            <div class="team-item-name">Алексей<br />Чегодаев</div>
-                            <div class="team-item-post">директор по развитию</div>
-                            <div class="team-item-text">Всегда помнит, что и в какой момент надо сделать, чтобы компания сделала свою работу лучше, а клиентов счастливее. Гениальный проектный менеджер и мистер «не бывает сложных переговоров».</div>
-                        </div>
-                        <div class="team-item">
-                            <div class="team-item-photo"><img src="files/team-2.jpg" alt="" width="220" height="220" /></div>
-                            <div class="team-item-name">Дарья<br />Морозова</div>
-                            <div class="team-item-post">копирайтер</div>
-                            <div class="team-item-text">Буквоед и фразоглот. Говорит как режет, создает новое из ничего. Наполняет вакуум звенящим контентом. Пугающе креативна.</div>
-                        </div>
-                        <div class="team-item">
-                            <div class="team-item-photo"><img src="files/team-3.jpg" alt="" width="220" height="220" /></div>
-                            <div class="team-item-name">Двигатель<br />Внутреннего</div>
-                            <div class="team-item-post">креативный директор</div>
-                            <div class="team-item-text">Главный креативец и умеец. Владеет фирменным секретом приготовления кипятка. Обезоруживающе уверен,искренне горяч.</div>
-                        </div>
-                        <div class="team-item">
-                            <div class="team-item-photo"><img src="files/team-4.jpg" alt="" width="220" height="220" /></div>
-                            <div class="team-item-name">Екатерина<br />Тульская</div>
-                            <div class="team-item-post">исследователь-стратег</div>
-                            <div class="team-item-text">Если бы Мария Складовская-Кюри занималась исследованием взаимодействия продукта и пользователя, то её бы звали Екатерина Тульская. Катя умеет понять, чего хочет клиент и каким должен быть продукт.</div>
-                        </div>
-                        <div class="team-item">
-                            <div class="team-item-photo"><img src="files/team-4.jpg" alt="" width="220" height="220" /></div>
-                            <div class="team-item-name">Екатерина<br />Тульская</div>
-                            <div class="team-item-post">исследователь-стратег</div>
-                            <div class="team-item-text">Если бы Мария Складовская-Кюри занималась исследованием взаимодействия продукта и пользователя, то её бы звали Екатерина Тульская. Катя умеет понять, чего хочет клиент и каким должен быть продукт.</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- team END -->
-
-            <!-- services -->
-            <section id="services">
-                <div class="services-inner">
-                    <h2>KEEP IT SALE</h2>
-                    <div class="services-title">Наши услуги и цены</div>
-
-                    <div class="services-list">
-                        <div class="services-item">
-                            <div class="services-icon"><img src="images/services-icon-1.png" alt="" width="60" height="61" /></div>
-                            <div class="services-item-title-1">Хороший</div>
-                            <div class="services-item-title-2">вирусный ролик</div>
-                            <div class="services-item-text">Обещаем не менее 1 млн просмотров, но это не главное. А главное то, что конвертация в посетителей вашего сайта будет на уровне 10-15%, а количество клиентов вы уже можете посчитать и сами.</div>
-                            <div class="services-item-price">690 000 руб.</div>
-                            <div class="services-item-link"><a href="#">заказать</a></div>
-                        </div>
-
-                        <div class="services-item services-item-center">
-                            <div class="services-icon"><img src="images/services-icon-2.png" alt="" width="61" height="61" /></div>
-                            <div class="services-item-title-1">Отличный</div>
-                            <div class="services-item-title-2">вирусный ролик</div>
-                            <div class="services-item-text">Обещаем не менее 1 млн просмотров, но это не главное. А главное то, что конвертация в посетителей вашего сайта будет на уровне 10-15%, а количество клиентов вы уже можете посчитать и сами.</div>
-                            <div class="services-item-price">1 690 000 руб.</div>
-                            <div class="services-item-link"><a href="#">дайте два!</a></div>
-                        </div>
-
-                        <div class="services-item">
-                            <div class="services-icon"><img src="images/services-icon-3.png" alt="" width="61" height="60" /></div>
-                            <div class="services-item-title-1">Эффективный</div>
-                            <div class="services-item-title-2">вирусный ролик</div>
-                            <div class="services-item-text">Обещаем не менее 1 млн просмотров, но это не главное. А главное то, что конвертация в посетителей вашего сайта будет на уровне 10-15%, а количество клиентов вы уже можете посчитать и сами.</div>
-                            <div class="services-item-price">5 690 000 руб.</div>
-                            <div class="services-item-link"><a href="#">заказать</a></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- services END -->
-
-            <!-- contacts -->
-            <section id="contacts">
-                <div class="contacts-inner">
-                    <div class="contacts-content">
-                        <div class="contacts-title">Зайдешь в гости?</div>
-                        <div class="contacts-text">
-                            <p>Москва, ул. Дубининская, д. 57, стр. 2</p>
-                            <p><a href="#">ak@keepitok.net</a></p>
-                            <p>+7 916 405-9438</p>
-                        </div>
-                    </div>
-
-                    <div class="contacts-social">
-                        <div class="contacts-title">Или потусуешься<br />с нами?</div>
-                        <div class="contacts-social-links">
-                            <a href="#" class="contacts-social-vk"></a>
-                            <a href="#" class="contacts-social-yt"></a>
-                            <a href="#" class="contacts-social-fb"></a>
-                            <a href="#" class="contacts-social-tw"></a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- contacts END -->
-
-            <!-- subscribe -->
-            <section class="subscribe">
-                <div class="subscribe-icon"></div>
-                <div class="subscribe-text">
-                    <div class="subscribe-title">Наша рассылка</div>
-                    <div class="subscribe-name">Аналитика вирусного маркетинга и эффективные приемы</div>
-                </div>
-                <div class="subscribe-link"><a href="#">Подписаться</a></div>
-            </section>
-            <!-- subscribe END -->
-
-            <footer>
-                <div class="footer-inner">
-                    <div class="footer-logo"><a href="#"><img src="images/footer-logo.png" alt="" width="66" height="53" /></a></div>
-                    <div class="footer-menu">
-                        <ul>
-                            <li><a href="#events">Мероприятия</a></li>
-                            <li><a href="#portfolio">Наши работы</a></li>
-                            <li><a href="#team">Команда</a></li>
-                            <li><a href="#services">Услуги и цены</a></li>
-                            <li><a href="#clients">Клиенты</a></li>
-                            <li><a href="#contacts">Контакты</a></li>
+                            </li>
                         </ul>
                     </div>
-                </div>
-            </footer>
+                    <div class="slider-ctrl"></div>
+                </section>
+                <!-- slider END -->
 
+                <!-- subscribe -->
+                <section class="subscribe">
+                    <div class="subscribe-icon"></div>
+                    <div class="subscribe-text">
+                        <div class="subscribe-title">Наша рассылка</div>
+                        <div class="subscribe-name">Аналитика вирусного маркетинга и эффективные приемы</div>
+                    </div>
+                    <div class="subscribe-link"><a href="windows/subscribe.html">Подписаться</a></div>
+                </section>
+                <!-- subscribe END -->
+
+                <!-- events -->
+                <section id="events">
+                    <h2>KEEP IT TIME</h2>
+                    <div class="events-title">Мероприятия</div>
+                    <a href="windows/archive.html" class="events-archive">Архив</a>
+                    <div class="events-slider">
+                        <div class="events-item">
+                            <div class="events-item-photo" style="background-image:url(files/events-1.jpg)"></div>
+                            <div class="events-item-content">
+                                <div class="events-item-title">Двухдневный практикум<br />«Вся соль вирусного маркетинга»</div>
+                                <div class="events-item-info">
+                                    <div class="events-item-info-inner">
+                                        <div class="events-item-info-date">24-25 октября 11:00</div>
+                                        <div class="events-item-info-address">
+                                            <div class="events-item-info-address-text">
+                                                <div class="events-item-info-address-text-inner">Винзавод, академия коммуникаций Wordshop, 4-й Сыромятнический пер., 1, стр. 6</div>
+                                                <a href="#" class="events-item-info-address-more"><span></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="events-item">
+                            <div class="events-item-photo" style="background-image:url(files/slider-2.jpg)"></div>
+                            <div class="events-item-content">
+                                <div class="events-item-title">Двухдневный интенсив<br />«Маркетинг не как у всех»</div>
+                                <div class="events-item-info">
+                                    <div class="events-item-info-inner">
+                                        <div class="events-item-info-date">26-27 сентября</div>
+                                        <div class="events-item-info-address">
+                                            <div class="events-item-info-address-text">
+                                                <div class="events-item-info-address-text-inner">Винзавод, академия коммуникаций Wordshop, 4-й Сыромятнический пер., 1, стр. 6</div>
+                                                <a href="#" class="events-item-info-address-more"><span></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="events-item">
+                            <div class="events-item-photo" style="background-image:url(files/slider-3.jpg)"></div>
+                            <div class="events-item-content">
+                                <div class="events-item-title">Тренинг «Как создать вкусный видео-ролик для стартапа»</div>
+                                <div class="events-item-info">
+                                    <div class="events-item-info-inner">
+                                        <div class="events-item-info-date">25 июня</div>
+                                        <div class="events-item-info-address">
+                                            <div class="events-item-info-address-text">
+                                                <div class="events-item-info-address-text-inner">Винзавод, академия коммуникаций Wordshop, 4-й Сыромятнический пер., 1, стр. 6</div>
+                                                <a href="#" class="events-item-info-address-more"><span></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="events-ctrl">
+                        <a href="#" class="active">
+                            <div class="events-ctrl-date">24-25 октября 11:00</div>
+                            <div class="events-ctrl-name">Двухдневный практикум «Вся соль вирусного маркетинга»</div>
+                        </a>
+
+                        <a href="#">
+                            <div class="events-ctrl-date">26-27 сентября</div>
+                            <div class="events-ctrl-name">Двухдневный интенсив «Маркетинг не как у всех»</div>
+                        </a>
+
+                        <a href="#">
+                            <div class="events-ctrl-date">25 июня</div>
+                            <div class="events-ctrl-name">Тренинг «Как создать вкусный видео-ролик для стартапа»</div>
+                        </a>
+                    </div>
+                </section>
+                <!-- events END -->
+
+                <!-- portfolio -->
+                <section id="portfolio">
+                    <h2>KEEP IT WORK</h2>
+                    <div class="portfolio-title">Наши работы</div>
+
+                    <div class="portfolio-menu">
+                        <ul>
+                            <li class="active"><a href="#" data-filter="*">все проекты</a></li>
+                            <li><a href="#" data-filter=".virus">вирусные ролики</a></li>
+                            <li><a href="#" data-filter=".promo">промо-ролики</a></li>
+                            <li><a href="#" data-filter=".media">медиа-проекты</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="portfolio-list">
+                        <div class="portfolio-item portfolio-item-two-third virus">
+                            <a href="windows/project.html" title="На каких тренажёрах занимаются Путин и Медведев?">
+                                <div class="portfolio-video">
+                                    <div class="portfolio-video-preview"><img src="files/portfolio-1.jpg" alt="" /></div>
+                                    <div class="portfolio-video-title">На каких тренажёрах занимаются Путин и Медведев?</div>
+                                    <div class="portfolio-video-type">вирусные ролики</div>
+                                    <div class="portfolio-video-icon"></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="portfolio-item portfolio-item-third promo">
+                            <a href="windows/project.html" title="Не проходи мимо">
+                                <div class="portfolio-video">
+                                    <div class="portfolio-video-preview"><img src="files/portfolio-2.jpg" alt="" /></div>
+                                    <div class="portfolio-video-title">На каких тренажёрах занимаются Путин и Медведев?</div>
+                                    <div class="portfolio-video-type">вирусные ролики</div>
+                                    <div class="portfolio-video-icon"></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="portfolio-item portfolio-item-third media">
+                            <a href="windows/project.html" title="МТС">
+                                <div class="portfolio-video">
+                                    <div class="portfolio-video-preview"><img src="files/portfolio-3.jpg" alt="" /></div>
+                                    <div class="portfolio-video-title">На каких тренажёрах занимаются Путин и Медведев?</div>
+                                    <div class="portfolio-video-type">вирусные ролики</div>
+                                    <div class="portfolio-video-icon"></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="portfolio-item portfolio-item-half promo">
+                            <a href="windows/project.html" title="Вирусный ролик про курицу">
+                                <div class="portfolio-video">
+                                    <div class="portfolio-video-preview"><img src="files/portfolio-4.jpg" alt="" /></div>
+                                    <div class="portfolio-video-title">На каких тренажёрах занимаются Путин и Медведев?</div>
+                                    <div class="portfolio-video-type">вирусные ролики</div>
+                                    <div class="portfolio-video-icon"></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="portfolio-item portfolio-item-half media">
+                            <a href="windows/project.html" title="Серебряный меркурий">
+                                <div class="portfolio-video">
+                                    <div class="portfolio-video-preview"><img src="files/portfolio-5.jpg" alt="" /></div>
+                                    <div class="portfolio-video-title">На каких тренажёрах занимаются Путин и Медведев?</div>
+                                    <div class="portfolio-video-type">вирусные ролики</div>
+                                    <div class="portfolio-video-icon"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-loading">
+                        <div class="portfolio-item portfolio-item-half"><div class="portfolio-loading-progress"></div></div>
+                        <div class="portfolio-item portfolio-item-half"><div class="portfolio-loading-progress"></div></div>
+                    </div>
+
+                    <div class="portfolio-more"><a href="windows/portfolio-add.html">ДАльше больше</a></div>
+                </section>
+                <!-- portfolio END -->
+
+                <!-- team -->
+                <section id="team">
+                    <div class="team-inner">
+                        <h2>KEEP IT TEAM</h2>
+                        <div class="team-title">Наша команда</div>
+
+                        <div class="team-list">
+                            <div class="team-item">
+                                <div class="team-item-photo"><img src="files/team-1.jpg" alt="" width="220" height="220" /></div>
+                                <div class="team-item-name">Алексей<br />Чегодаев</div>
+                                <div class="team-item-post">директор по развитию</div>
+                                <div class="team-item-text">Всегда помнит, что и в какой момент надо сделать, чтобы компания сделала свою работу лучше, а клиентов счастливее. Гениальный проектный менеджер и мистер «не бывает сложных переговоров».</div>
+                            </div>
+                            <div class="team-item">
+                                <div class="team-item-photo"><img src="files/team-2.jpg" alt="" width="220" height="220" /></div>
+                                <div class="team-item-name">Дарья<br />Морозова</div>
+                                <div class="team-item-post">копирайтер</div>
+                                <div class="team-item-text">Буквоед и фразоглот. Говорит как режет, создает новое из ничего. Наполняет вакуум звенящим контентом. Пугающе креативна.</div>
+                            </div>
+                            <div class="team-item">
+                                <div class="team-item-photo"><img src="files/team-3.jpg" alt="" width="220" height="220" /></div>
+                                <div class="team-item-name">Двигатель<br />Внутреннего</div>
+                                <div class="team-item-post">креативный директор</div>
+                                <div class="team-item-text">Главный креативец и умеец. Владеет фирменным секретом приготовления кипятка. Обезоруживающе уверен,искренне горяч.</div>
+                            </div>
+                            <div class="team-item">
+                                <div class="team-item-photo"><img src="files/team-4.jpg" alt="" width="220" height="220" /></div>
+                                <div class="team-item-name">Екатерина<br />Тульская</div>
+                                <div class="team-item-post">исследователь-стратег</div>
+                                <div class="team-item-text">Если бы Мария Складовская-Кюри занималась исследованием взаимодействия продукта и пользователя, то её бы звали Екатерина Тульская. Катя умеет понять, чего хочет клиент и каким должен быть продукт.</div>
+                            </div>
+                            <div class="team-item">
+                                <div class="team-item-photo"><img src="files/team-4.jpg" alt="" width="220" height="220" /></div>
+                                <div class="team-item-name">Екатерина<br />Тульская</div>
+                                <div class="team-item-post">исследователь-стратег</div>
+                                <div class="team-item-text">Если бы Мария Складовская-Кюри занималась исследованием взаимодействия продукта и пользователя, то её бы звали Екатерина Тульская. Катя умеет понять, чего хочет клиент и каким должен быть продукт.</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- team END -->
+
+                <!-- services -->
+                <section id="services">
+                    <div class="services-inner">
+                        <h2>KEEP IT SALE</h2>
+                        <div class="services-title">Наши услуги и цены</div>
+
+                        <div class="services-list">
+                            <div class="services-item">
+                                <div class="services-icon"><img src="images/services-icon-1.png" alt="" width="60" height="61" /></div>
+                                <div class="services-item-title-1">Хороший</div>
+                                <div class="services-item-title-2">вирусный ролик</div>
+                                <div class="services-item-text">Обещаем не менее 1 млн просмотров, но это не главное. А главное то, что конвертация в посетителей вашего сайта будет на уровне 10-15%, а количество клиентов вы уже можете посчитать и сами.</div>
+                                <div class="services-item-price">690 000 руб.</div>
+                                <div class="services-item-link"><a href="windows/order.html">заказать</a></div>
+                            </div>
+
+                            <div class="services-item services-item-center">
+                                <div class="services-icon"><img src="images/services-icon-2.png" alt="" width="61" height="61" /></div>
+                                <div class="services-item-title-1">Отличный</div>
+                                <div class="services-item-title-2">вирусный ролик</div>
+                                <div class="services-item-text">Обещаем не менее 1 млн просмотров, но это не главное. А главное то, что конвертация в посетителей вашего сайта будет на уровне 10-15%, а количество клиентов вы уже можете посчитать и сами.</div>
+                                <div class="services-item-price">1 690 000 руб.</div>
+                                <div class="services-item-link"><a href="windows/order.html">дайте два!</a></div>
+                            </div>
+
+                            <div class="services-item">
+                                <div class="services-icon"><img src="images/services-icon-3.png" alt="" width="61" height="60" /></div>
+                                <div class="services-item-title-1">Эффективный</div>
+                                <div class="services-item-title-2">вирусный ролик</div>
+                                <div class="services-item-text">Обещаем не менее 1 млн просмотров, но это не главное. А главное то, что конвертация в посетителей вашего сайта будет на уровне 10-15%, а количество клиентов вы уже можете посчитать и сами.</div>
+                                <div class="services-item-price">5 690 000 руб.</div>
+                                <div class="services-item-link"><a href="windows/order.html">заказать</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- services END -->
+
+                <!-- contacts -->
+                <section id="contacts">
+                    <div class="contacts-inner">
+                        <div class="contacts-content">
+                            <div class="contacts-title">Зайдешь в гости?</div>
+                            <div class="contacts-text">
+                                <p>Москва, ул. Дубининская, д. 57, стр. 2</p>
+                                <p><a href="#">ak@keepitok.net</a></p>
+                                <p>+7 916 405-9438</p>
+                            </div>
+                        </div>
+
+                        <div class="contacts-social">
+                            <div class="contacts-title">Или потусуешься<br />с нами?</div>
+                            <div class="contacts-social-links">
+                                <a href="#" class="contacts-social-vk"></a>
+                                <a href="#" class="contacts-social-yt"></a>
+                                <a href="#" class="contacts-social-fb"></a>
+                                <a href="#" class="contacts-social-tw"></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- contacts END -->
+
+                <!-- subscribe -->
+                <section class="subscribe">
+                    <div class="subscribe-icon"></div>
+                    <div class="subscribe-text">
+                        <div class="subscribe-title">Наша рассылка</div>
+                        <div class="subscribe-name">Аналитика вирусного маркетинга и эффективные приемы</div>
+                    </div>
+                    <div class="subscribe-link"><a href="windows/subscribe.html">Подписаться</a></div>
+                </section>
+                <!-- subscribe END -->
+
+            </div>
         </div>
         <!-- wrapper END -->
+
+        <footer>
+            <div class="footer-inner">
+                <div class="footer-logo"><a href="#"><img src="images/footer-logo.png" alt="" width="66" height="53" /></a></div>
+                <div class="footer-menu">
+                    <ul>
+                        <li><a href="#events">Мероприятия</a></li>
+                        <li><a href="#portfolio">Наши работы</a></li>
+                        <li><a href="#team">Команда</a></li>
+                        <li><a href="#services">Услуги и цены</a></li>
+                        <li><a href="#clients">Клиенты</a></li>
+                        <li><a href="#contacts">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
 
     </body>
 </html>
