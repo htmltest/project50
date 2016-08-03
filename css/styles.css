@@ -104,14 +104,14 @@ form {margin:40px 0; padding:0}
 .wrapper.fixed .wrapper-inner {padding-top:50px}
 .page-main .wrapper-inner {padding:0 0 100px 0}
 
-header {position:fixed; left:0; top:0; width:100%; z-index:99; height:100px; border-bottom:1px solid #f5f5f5; color:#000; background:#fff; transition:all .5s ease}
+header {position:fixed; left:0; top:0; width:100%; z-index:99; height:100px; border-bottom:1px solid #f5f5f5; color:#000; background:#fff}
 .wrapper.fixed header {height:50px; border-bottom:none; box-shadow:0 5px 5px rgba(0, 0, 0, .27)}
 .header-inner {width:940px; margin:0 auto}
 .header-inner:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
 
-.logo {float:left; line-height:0}
-.logo img {width:140px; height:100px; transition:all .5s ease}
-.wrapper.fixed .logo img {width:100px; height:60px}
+.logo {float:left; line-height:0; background:url(../images/logo-fixed.png); width:100px; height:60px}
+.logo img {width:140px; height:203px}
+.wrapper.fixed .logo img {display:none}
 
 .header-ok {float:right; width:73px; height:77px; padding:10px 0 0 14px; margin:13px 8px 0 0; background:url(../images/header-ok.png)}
 .header-ok a {display:block; width:28px; height:38px; background:url(../images/header-ok-link.png) no-repeat 28px 38px}
@@ -323,8 +323,8 @@ footer {background:#2b2224; height:100px; position:relative; margin:-100px 0 0 0
 .window-content {position:relative; width:940px; margin:0 auto}
 .project-result {background:#f5f5f5; padding:38px 80px 22px 80px; text-align:center; margin:40px 0}
 .project-result h2 {margin:0 0 20px 0}
-.window-close {display:block; position:fixed; z-index:99999; right:134px; top:72px; padding:0 0 0 20px; font-size:14px; background:url(../images/window-close.png) no-repeat; text-transform:uppercase}
-.window-close:hover {text-decoration:none; color:#d10737; background-position:left -20px}
+.window-close {display:block; position:fixed; z-index:99999; right:79px; top:60px; padding:0 20px 0 40px; font-size:14px; line-height:36px; height:36px; color:#fff; background:#ee1d4e url(../images/window-close.png) no-repeat 20px center; text-transform:uppercase; border-radius:18px}
+.window-close:hover {text-decoration:none; color:#fff; background-color:#d10737}
 
 .window-project {width:780px; margin:0 auto}
 .project-prev,
